@@ -1,0 +1,17 @@
+import { createRoot } from "react-dom/client";
+import { useClick } from "./useClick";
+
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
+
+const App = () => {
+  const sayHello = () => console.log("say hello");
+  const title = useClick(sayHello);
+  return (
+    <div className="App">
+      <h1 ref={title}>Hi</h1>
+    </div>
+  );
+};
+
+root.render(<App />);
